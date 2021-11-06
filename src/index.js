@@ -3,6 +3,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { HashRouter, Switch, Route } from 'react-router-dom'
 import Home from './home'
+import ListadoPeliculas from './peliculas/listadoPeliculas'
 import ListadoPeliculasAdulto from './peliculas/listadoPeliculasAdulto'
 import ListadoPeliculasInfantil from './peliculas/listadoPeliculasInfantil'
 
@@ -19,7 +20,8 @@ ReactDOM.render
 
 	    <Switch>
 	        <Route exact path="/" component={ Home }/>
-	        <Route exact path="/peliculasAdulto" component={ ListadoPeliculasAdulto }/>
+					<Route exact path="/peliculas/:clasificacion" component={ ListadoPeliculas }/>
+					<Route exact path="/peliculasAdulto" component={ ListadoPeliculasAdulto }/>
 					<Route exact path="/peliculasInfantil" component={ ListadoPeliculasInfantil }/>
 	    </Switch>
 			<br />
