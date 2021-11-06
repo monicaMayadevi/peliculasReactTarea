@@ -21,15 +21,11 @@ class ListadoPeliculasAdulto extends React.Component
 				 <h2>Listado de peliculas</h2>
 
 				<br/>
-				<table class="table">
-         <tbody>
-          <tr>
+				<div class="row row-cols-1 row-cols-md-4 g-4">
  		    		{ peliculas.listado.map(pelicula => (
 							<VerPeliculaCard datos={ pelicula }/>
 		       ))}
-          </tr>
-	       </tbody>
-	      </table>
+          </div>
 				<div>
 					 <ul>
 		            { peliculas.listado.map(pelicula => (
