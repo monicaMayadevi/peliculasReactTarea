@@ -1,4 +1,4 @@
-const SERVIDOR ='https://fernandauam.github.io/peliculas'
+const SERVIDOR = 'https://monicamayadevisilva.github.io'
 const leerPeliculas = async () =>
 {
 	const url = `${ SERVIDOR }/peliculas.json`
