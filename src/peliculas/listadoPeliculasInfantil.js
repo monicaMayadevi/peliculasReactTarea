@@ -6,7 +6,16 @@ import VerPeliculaCard from './VerPeliculaCard'
 
 class ListadoPeliculasInfantil extends React.Component
 {
-
+	constructor(props)
+	{
+		super(props)
+		const { peliculas } = props
+		if( ! peliculas.listadoCargado )
+		{
+			peliculas.cargarListado()
+		}
+	}
+	
 	render()
 	{
 //const peliculasAyA = peliculas.filter( pelicula => pelicula.clasificacion != 'A' )

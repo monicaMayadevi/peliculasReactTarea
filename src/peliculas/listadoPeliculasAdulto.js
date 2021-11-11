@@ -6,6 +6,16 @@ import VerPeliculaCard from './VerPeliculaCard'
 
 class ListadoPeliculasAdulto extends React.Component
 {
+	constructor(props)
+	{
+		super(props)
+		const { peliculas } = props
+		if( ! peliculas.listadoCargado )
+		{
+			peliculas.cargarListado()
+		}
+	}
+	
 	renombrarPelicula()
 	{
 		this.props.peliculas.cambiarNombre("Video Monish",0)
