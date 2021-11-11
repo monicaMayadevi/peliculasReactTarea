@@ -5,11 +5,13 @@ export default class PeliculasStore
 	constructor()
 	{ makeAutoObservable(this) }
    titulo = "Video centro"
+	 errorListado = false
    listadoCargado = false
    listado = []
 
    async cargarListado()
    {
+		 this.errorListado = false
      try
      {
         this.listado = await servicioPeliculas.leerPeliculas()
@@ -18,6 +20,7 @@ export default class PeliculasStore
      catch (error)
      {
         console.error(error)
+				this.errorListado = true
         this.listadoCargado = false
      }
    }
@@ -25,6 +28,7 @@ export default class PeliculasStore
    limpiar()
    {
      this.listado = []
+		 this.errorListado = false
      this.cargarListado = false
    }
 

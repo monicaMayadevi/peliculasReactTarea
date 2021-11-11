@@ -34,6 +34,16 @@ class ListadoPeliculas extends React.Component
 				<button type="button" onClick={ () => this.renombrarPelicula() }>Cambiar nombre</button>
 				<br/>
 				<div class="text-center">
+				  {
+						peliculas.errorListado &&
+						(
+							<div class="alert alert-danger"
+							onClick={ () => peliculas.errorListado = false }
+							>
+							  Hubo un error al solicitar las peliculas. Por favor miéntasela a tu administrador de sistemas.
+							</div>
+						)
+					}
 				                <div class="row">
 				                    <div class="col fs-3 text-center mb-3">
 				                        Titulos {clasificar=="A"?"Infantil":(clasificar=="B"?"Adolescentes":"Adultos")}
