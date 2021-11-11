@@ -1,7 +1,7 @@
 const SERVIDOR = 'https://monicamayadevi.github.io'
 const leerPeliculas = async () =>
 {
-	const url = `${ SERVIDOR }/peliculas.json`
+	const url = `${ SERVIDOR }/pelis.json`
 
   const response = await fetch (url)
 	if( response.ok )
