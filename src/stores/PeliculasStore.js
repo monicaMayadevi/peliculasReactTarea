@@ -1,16 +1,32 @@
- import { makeAutoObservable } from 'mobx'
+import { makeAutoObservable } from 'mobx'
+import servicioPeliculas from '../services/ServicioPeliculas'
 export default class PeliculasStore
 {
 	constructor()
 	{ makeAutoObservable(this) }
-  titulo = "Video centro"
-   listado = [
-		{ nombre: 'Viernes 13', genero: 'Terror', clasificacion: 'B', img: '../img/peli1.png' },
- 		{ nombre: 'Bambi', genero: 'Infantil', clasificacion: 'A', img: '../img/peli2.png' },
-    { nombre: 'Rambo', genero: 'Accion', clasificacion: 'B', img: '../img/peli1.png' },
-    { nombre: 'XXX', genero: 'Accion', clasificacion: 'C', img: '../img/peli2.png' }
-		]
+   titulo = "Video centro"
+   listadoCargado = false
+   listado = []
 
+   async cargarListado()
+   {
+     try
+     {
+        this.listado = await servicioPeliculas.leerPeliculas()
+        this.listadoCargado = true
+     }
+     catch (error)
+     {
+        console.error(error)
+        this.listadoCargado = false
+     }
+   }
+
+   limpiar()
+   {
+     this.listado = []
+     this.cargarListado = false
+   }
 
 	cambiarNombre( nombre,indice )
 	{

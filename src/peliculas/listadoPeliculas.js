@@ -5,6 +5,16 @@ import VerPeliculaCard from './VerPeliculaCard'
 
 class ListadoPeliculas extends React.Component
 {
+	constructor(props)
+	{
+		super(props)
+		const { peliculas } = props
+		if( ! peliculas.listadoCargado )
+		{
+			peliculas.cargarListado()
+		}
+	}
+
 	renombrarPelicula()
 	{
 		console.log("ejecutado");
