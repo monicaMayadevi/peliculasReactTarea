@@ -10,15 +10,4 @@ const esperar = milis =>
 		setTimeout( resolve, milis )
 	})
 }
-
-const ejecutarDespues = (milis,accion) =>
-{
-	setTimeout (accion, milis )
-}
-
-//Mi codigo---------------------------
-
-
-
-
-export default { separar, esperar, ejecutarDespues }
+export default { separar, esperar }
