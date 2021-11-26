@@ -59,4 +59,23 @@ describe( 'utils', () =>
 			 }
 		 })
 	})
+
+
+   describe('ejecutarDespues', () =>
+   {
+		 it('debe ejecutar despues', done =>
+		 {
+			 let variable = 0
+			 utils.ejecutarDespues(100, () => { variable++ })
+
+      const verificacion = () =>
+			{
+				expect( variable ).equal(1)
+				done()
+			}
+			 setTimeout ( verificacion, 110 )
+		 })
+	 })
+
+	})
 })
