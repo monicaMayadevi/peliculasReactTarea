@@ -10,4 +10,5 @@ const esperar = milis =>
 		setTimeout( resolve, milis )
 	})
 }
+
 export default { separar, esperar }

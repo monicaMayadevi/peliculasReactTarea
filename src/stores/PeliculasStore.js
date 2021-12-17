@@ -1,5 +1,7 @@
 import { makeAutoObservable } from 'mobx'
 import servicioPeliculas from '../services/ServicioPeliculas'
+
+
 export default class PeliculasStore
 {
 	constructor()
@@ -29,7 +31,7 @@ export default class PeliculasStore
    {
      this.listado = []
 		 this.errorListado = false
-     this.cargarListado = false
+     this.listadoCargado = false
    }
 
 	cambiarNombre( nombre,indice )
