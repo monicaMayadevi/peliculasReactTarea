@@ -11,12 +11,4 @@ const esperar = milis =>
 	})
 }
 
-
-
-
-//Mi codigo---------------------------
-
-
-
-
 export default { separar, esperar }
