@@ -6,8 +6,9 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "start": "reload -b -w dist",
-    "test": "npm run test-unit",
-    "test-unit": "jest"
+    "test": "npm run test-unit && test-integration",
+    "test-unit": "jest",
+    "test-integration": "cypress run --config video=false"
   },
   "keywords": [
     "REACT"
