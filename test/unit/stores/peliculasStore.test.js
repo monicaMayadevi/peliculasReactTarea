@@ -72,6 +72,48 @@ describe( 'PeliculasStore', () =>
 
 	 })
 
+	 describe('seleccionar0', () =>
+	 {
+	    const pelicula1 = {id: 1, nombre: 'X-Men'}
+			const pelicula2 = {id: 2, nombre: 'Blanca nieves'}
+
+			beforeEach(()=>
+			{
+					sandbox.stub( servicioPeliculas, 'leerPeliculas' ).resolves( [pelicula1,pelicula2]
+					)}
+
+	 		it('debe seleccionar un registro', async () =>
+	 		{
+
+	 			const store = new PeliculasStore()
+
+	 			await store.cargarListado()
+	 			expect( store.listadoCargado ).to.be.true
+	 			expect( store.seleccionado.id ).to.not.be.ok
+	 			store.seleccionar(1)
+	 			expect( store.seleccionado ).to.deep.equal( pelicula1 )
+			})
+
+
+
+			it('debe seleccionar un registro si se proporciona un id no valida', async () =>
+	 		{
+
+	 			const store = new PeliculasStore()
+
+	 			await store.cargarListado()
+	 			expect( store.listadoCargado ).to.be.true
+	 			expect( store.seleccionado.id ).to.not.be.ok
+	 			store.seleccionar(30)
+	 			expect( store.seleccionado.id ).to.deep.equal( pelicula1 )
+
+
+	 		})
+
+
+
+	 })
+
 
 
 })
