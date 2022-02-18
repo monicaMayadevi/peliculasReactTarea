@@ -1,8 +1,8 @@
 describe('home peliculas', () =>
 {
-  it('acceso a la aplicacion', () =>
+  beforeEach( () =>
   {
-    cy.visit('http://localhost:8080/#/')
+    cy.visit('http://localhost:8080')
   })
   it('listar enlances a los listados de peliculas', () =>
   {
